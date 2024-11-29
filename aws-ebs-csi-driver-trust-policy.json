@@ -1,0 +1,20 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": {
+          "Federated": "arn:aws:iam::905418098244:role/tooling-app-eks-cluster-20241129095748140300000002"
+        },
+        "Action": "sts:AssumeRoleWithWebIdentity",
+        "Condition": {
+          "StringEquals": {
+            "oidc.eks.us-west-1.amazonaws.com/id/FED837FC26CBC266F4BEF643D77D6774:aud": "sts.amazonaws.com",
+            "oidc.eks.us-west-1.amazonaws.com/id/FED837FC26CBC266F4BEF643D77D6774:sub": "system:serviceaccount:kube-system:ebs-csi-controller-sa"
+          }
+        }
+      }
+    ]
+
+}
+  
